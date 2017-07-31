@@ -1,4 +1,3 @@
-Testing that I'm working on a branch named cart.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
