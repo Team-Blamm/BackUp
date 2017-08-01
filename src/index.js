@@ -1,23 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+//Import React and React-Dom
+import React from "react";
+import ReactDOM from "react-dom";
 
-import './index.css';
+//IMPORT BROWSERROUTER FUNCTIONALITY
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import App from './App';
-import SuperHeroes from './';
+//IMPORT CSS FILE HERE
 
+//IMPORT COMPONENTS HERE
+import App from "./components/App";
+import Admin from "./components/Admin.js";
+import BaseLayout from "./components/base_layout.js";
 
-import registerServiceWorker from './registerServiceWorker';
+//IMPORT REGISTERED SERVICE WORKER
+import registerServiceWorker from "./components/registerServiceWorker";
 
+//ROUTES
 ReactDOM.render(
   <BrowserRouter>
     <BaseLayout>
       <Switch>
-
-
-        <Route path="/superheros" component={SuperHeroes} />
+        <Route path="/Admin" component={Admin} />
         <Route path="/" component={App} />
-
       </Switch>
     </BaseLayout>
   </BrowserRouter>,
