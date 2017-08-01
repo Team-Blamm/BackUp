@@ -11,7 +11,7 @@ class ProductList extends Component {
   }
   componentDidMount() {
     console.log("'Product List' did mount");
-    fetch("https://blamm-store-backend.herokuapp.com/api/v1/products/type/villain")
+    fetch("https://blamm-store-backend.herokuapp.com/api/v1/products")
       .then(results => {
         return results.json();
       })
@@ -27,7 +27,7 @@ class ProductList extends Component {
       <div>
       {this.state.productList.count > 0 ? (
         <div>
-          <div>Product Cards</div>
+          <div><h1>Product Cards</h1></div>
           <ProductCard productList={this.state.productList} />
         </div>
       ) : (
