@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 //IMPORT COMPONENTS HERE
 import App from "./components/App";
 import Admin from "./components/Admin.js";
+import ProductList from "./components/ProductList.js";
 import BaseLayout from "./components/base_layout.js";
 
 //IMPORT REGISTERED SERVICE WORKER
@@ -21,6 +22,7 @@ ReactDOM.render(
   <BrowserRouter>
     <BaseLayout>
       <Switch>
+        <Route path="/ProductList" component={ProductList} />
         <Route path="/Admin" component={Admin} />
         <Route path="/" component={App} />
       </Switch>
