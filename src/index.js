@@ -15,6 +15,7 @@ import BaseLayout from "./components/base_layout.js";
 //IMPORT REGISTERED SERVICE WORKER
 import registerServiceWorker from "./components/registerServiceWorker";
 
+
 //ROUTES
 ReactDOM.render(
   <BrowserRouter>
