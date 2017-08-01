@@ -22,6 +22,7 @@ ReactDOM.render(
   <BrowserRouter>
     <BaseLayout>
       <Switch>
+        <Route path="/ProductList/:type" component={ProductList} />
         <Route path="/ProductList" component={ProductList} />
         <Route path="/Admin" component={Admin} />
         <Route path="/" component={App} />
