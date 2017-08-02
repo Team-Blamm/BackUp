@@ -9,6 +9,7 @@ class ProductCard extends Component {
     let match = this.props.match;
     console.log(this.props.match);
     let products = this.props.productList.results.map(product => {
+        let services = product.services.map(e => e.split(' ').map(f => <span> {f} </span>));
       return (
         <div key={product.title}>
           <div className="productBorder">
@@ -16,6 +17,21 @@ class ProductCard extends Component {
               <Link to={`${match.url}/${product.title}`}>
                 {product.title}
               </Link>
+              <div>
+                <img className="" src={product.img_src} alt={product.title}/>
+              </div>
+              <div>
+                <p>
+                  {product.title}
+                </p>
+                <p>
+                  {product.price}
+                </p>
+                <div>
+                  <h5>Services</h5>
+                  <p>{services}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

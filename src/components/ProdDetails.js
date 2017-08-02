@@ -1,7 +1,7 @@
 import React from "react";
 
 const Product = props => {
-  //create a variable "actor" with the data passed in via props.
+
   console.log(props);
   let product = props;
   return (
