@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import ProductCard from "./ProductCard.js";
 
 class ProductList extends Component {

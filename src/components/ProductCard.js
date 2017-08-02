@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+
+
 class ProductCard extends Component {
   constructor(props) {
     super(props);
@@ -11,29 +13,29 @@ class ProductCard extends Component {
     let products = this.props.productList.results.map(product => {
         let services = product.services.map(e => e.split(' ').map(f => <span> {f} </span>));
       return (
-        <div key={product.title}>
-          <div className="productBorder">
-            <div>
-              <Link to={`${match.url}/${product.title}`}>
-                {product.title}
-              </Link>
-              <div>
-                <img className="" src={product.img_src} alt={product.title}/>
+        <div className="productCardContainer" key={product.title}>
+
+
+
+              <div className="cardImageLeft">
+                <img className="thumbnailImage" src={product.img_src} alt={product.title}/>
               </div>
-              <div>
-                <p>
+
+              <div className="cardText">
+                <Link to={`${match.url}/${product.title}`}>
                   {product.title}
-                </p>
+                </Link>
                 <p>
-                  {product.price}
+                  Rate: {product.rate}/hr
                 </p>
                 <div>
                   <h5>Services</h5>
                   <p>{services}</p>
                 </div>
               </div>
-            </div>
-          </div>
+
+
+
         </div>
       );
     });
