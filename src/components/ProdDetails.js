@@ -1,51 +1,62 @@
-import React, { Component } from 'react';
+import React from "react";
 
-import '../styles/ProdDetails.css';
-
-export default class ProdDetails extends Component {
-  constructor() {
-    super();
-
-
-    {/* set props received from ProductList*/}
-
-  }
-
-  {/* map over props and match to title params */}
-
-  {/* conditional statement to check if match */}
-
-
+const Product = props => {
+  //create a variable "actor" with the data passed in via props.
+  console.log(props);
+  let product = props;
   return (
-    <div className={person.type + "Body"}>
+    <div className="Body">
       <div className="mainContainer">
         <div className="imageContainer">
-          <img className="personImage" src={person.img_src} alt={"portrait of " + person.title} />
+          <img
+            className="productImage"
+            src={product.img_src}
+            alt={"portrait of " + product.title}
+          />
         </div>
-        <div className="textContainer"
+        <div className="textContainer">
           <header className="header">
-            <h2>{person.title}</h2>
-            <h4>{person.type}</h4>
-            <h3>{person.tagline}</h3>
+            <h1>Matt is Here</h1>
+            <h2>
+              {product.title}
+            </h2>
+            <h4>
+              {product.type}
+            </h4>
+            <h3>
+              {product.tagline}
+            </h3>
           </header>
           <select name="services" className="servicesSelect">
-        {/* will this work, since services is an array? */}
-            <option>{person.services}</option>
+            {/* will this work, since services is an array? */}
+            <option>
+              {product.services}
+            </option>
           </select>
           <form className="hoursCounter">
-            <label for="hours" className="hoursLabel">Hours</label>
-            <button type="submit" name="hours" className="hoursUp">
+            <label htmlFor="hours" className="hoursLabel">
+              Hours
+            </label>
+            <button type="submit" name="hours" className="hoursUp" />
             <input type="text" name="hours" value="1" />
-            <button type="submit" name=hours className="hoursDown">
-            <label for="total" className="totalLabel">Total Price</label>
+            <button type="submit" className="hoursDown" />
+            <label htmlFor="total" className="totalLabel">
+              Total Price
+            </label>
             <input type="text" name="total" className="totalInput" value="" />
-            <button type="submit" name="add" className="cartButton">Add to Cart</button>
+            <button type="submit" name="add" className="cartButton">
+              Add to Cart
+            </button>
           </form>
-          <div className="description">{person.description}</div>
-        {/* Do I need to do a separate fetch to get review info? */}
-          <div className="reviews">{reviews}<div>
+          <div className="description">
+            {product.description}
+          </div>
+          {/* Do I need to do a separate fetch to get review info? */}
+          <div className="reviews" />
         </div>
       </div>
     </div>
-   )
-}
+  );
+};
+
+export default Product;
