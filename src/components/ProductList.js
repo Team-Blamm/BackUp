@@ -6,7 +6,8 @@ class ProductList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      productList: []
+      productList: [],
+      match: this.props.match
     };
   }
   componentDidMount() {
@@ -22,20 +23,21 @@ class ProductList extends Component {
   }
 
   render() {
-    let match = this.props.match;
     return (
       <div>
-      {this.state.productList.count > 0 ? (
-        <div>
-          <div><h1>Product Cards</h1></div>
-          <ProductCard productList={this.state.productList} />
-        </div>
-      ) : (
-        <div>Loading</div>
-      )
-    }
-
-    </div>);
+        {this.state.productList.count > 0
+          ? <div>
+              <div>
+                <h1>Product Cards</h1>
+              </div>
+              <ProductCard
+                productList={this.state.productList}
+                match={this.state.match}
+              />
+            </div>
+          : <div>Loading</div>}
+      </div>
+    );
   }
 }
 
