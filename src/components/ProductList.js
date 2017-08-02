@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import '../styles/components/_productList.scss'
 
 import ProductCard from "./ProductCard.js";
 

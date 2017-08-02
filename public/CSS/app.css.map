@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAIA,IAAK,CACH,gBAAgB,CCHF,IAAK,CDInB,KAAK,CCHW,IAAK",
-"sources": ["../../src/styles/base/_global.scss","../../src/styles/base/_variables.scss"],
+"mappings": "AAIA,IAAK,CACH,gBAAgB,CCHF,IAAK,CDInB,KAAK,CCHW,IAAK,CCHvB,cAAe,CACb,MAAM,CAAE,eAAe,CACvB,KAAK,CAAE,IAAI,CAEb,gBAAiB,CACf,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,WAAW",
+"sources": ["../../src/styles/base/_global.scss","../../src/styles/base/_variables.scss","../../src/styles/components/_productList.scss"],
 "names": [],
 "file": "app.css"
 }
