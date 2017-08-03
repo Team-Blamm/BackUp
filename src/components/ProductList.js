@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ProductCard from "./ProductCard.js";
+import SideBar from './ProductListSideBar.js';
 
 class ProductList extends Component {
   constructor(props) {
@@ -29,10 +30,15 @@ class ProductList extends Component {
               <div>
                 <h1>Product Cards</h1>
               </div>
-              <ProductCard
-                productList={this.state.productList}
-                match={this.state.match}
-              />
+              <div>
+                <SideBar/>
+              </div>
+              <div>
+                <ProductCard
+                  productList={this.state.productList}
+                  match={this.state.match}
+                />
+              </div>
             </div>
           : <div>Loading</div>}
       </div>
