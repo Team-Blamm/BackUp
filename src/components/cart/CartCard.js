@@ -24,56 +24,62 @@ const cartCardTotalStyle = {
 }
 
 class CartCard extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      hours: 0,
-      price: 0,
-      total: 0,
-    }
+      title: this.props.data.title,
+      hours: this.props.data.hours,
+      price: this.props.data.price,
+      img_src: this.props.data.img_src,
+      itemTotal: 0,
+    };
+    this.handleChange = this.handleChange.bind(this);
   };
 
 
-  componentWillMount() {
+  handleChange(e) {
+    if (e.target.value === "-") {
+      this.setState({
+        hours: this.state.hours - 1,
+        itemTotal: this.state.price * (this.state.hours - 1)
+      })
+    } else if (e.target.value === "+") {
+      this.setState({
+        hours: this.state.hours + 1,
+        itemTotal: this.state.price * (this.state.hours + 1)
+      })
+    };
+  };
 
-
-    let priceValue = this.props.price
-
-    // priceValue => {
-    //   return this.props.price.replace(/^\D+|\D+$/g, "")
-    // };
-    //
-    // let initialTotal = (priceValue * this.state.hours);
-    //
-    // this.setState({
-    //   price: priceValue,
-    //   total: initialTotal
-    // });
+  componentWillMount(){
+    this.setState({
+      itemTotal: this.state.price * this.state.hours
+    })
   }
 
   render() {
     return(
       <div>
-        Stuff
-      {/* <div style={cartCardStyle}>
+      <div style={cartCardStyle}>
           <div style={cartImageStyle}>
-            Image {data.img_src}
+            {/* <img src={this.state.img_src} /> */}
           </div>
           <div>
-            Name {data.title}
+            {this.state.title}
           </div>
           <div>
             <div style={cartCardHoursStyle}>
-              Hours {this.state.hours}
+              <button onClick={this.handleChange} value="-">-</button>
+              {this.state.hours}
+              <button onClick={this.handleChange} value="+">+</button>
             </div>
             <div style={cartCardTotalStyle}>
-              Total
+              {this.state.itemTotal}
             </div>
           </div>
       </div>
       <div>
-        {cartCardsMap}
-      </div> */}
+      </div>
       </div>
     );
   }
